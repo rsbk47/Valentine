@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Valentine</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?love,romantic') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background: #ff4d4d;
+            color: white;
+        }
+        .yes:hover {
+            background: #ff1a1a;
+        }
+        .no {
+            background: #ccc;
+            color: black;
+            position: absolute;
+        }
+        .gif-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/sthmCnCpfr8M8jtTQy/giphy.gif" alt="Cute animated cat">
+    </div>
+    <h1>Will you be my Valentine? ❤️</h1>
+    <div class="buttons">
+        <button class="yes" onclick="confirmPage()">Yes</button>
+        <button class="no" onmouseover="moveButton(this)">No</button>
+    </div>
+    
+    <script>
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        
+        function confirmPage() {
+            window.location.href = "confirm.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You Sure?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?cute,romantic') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            position: absolute;
+        }
+        .yes {
+            background: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background: #ccc;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Are you sure? 🤭</h1>
+    <div class="buttons">
+        <button class="yes" onclick="growAndMoveButton(this)">Yes</button>
+        <button class="no" onmouseover="moveButton(this)">No</button>
+    </div>
+
+    <script>
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        
+        function growAndMoveButton(button) {
+            let size = parseFloat(window.getComputedStyle(button).fontSize);
+            button.style.fontSize = `${size * 1.3}px`;
+            moveButton(button);
+            if (size > 60) {
+                window.location.href = "final.html";
+            }
+        }
+    </script>
+</body>
+</html>
